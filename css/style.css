@@ -1,0 +1,5 @@
+* {
+    margin: 0; /* jarak luar */
+    padding: 0; /* jarak dalam */
+    box-sizing: border-box; /* ukuran lebih mudah dihitung */
+}
