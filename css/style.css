@@ -25,20 +25,55 @@ section {
 /*  */
 
 /* Navbar style */
+header{
+    position: fixed;               /* navbar selalu menempel di layar */
+    top: 20px;                     /* jarak dari atas */
+    left: 50%;                     /* geser ke tengah */
+    transform: translateX(-50%);   /* benar-benar di tengah */
+
+    width: 90%;
+    max-width: 1200px;
+
+    padding: 18px 35px;
+
+    background: rgba(14,23,42,.6);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px;
+
+    z-index: 1000;
+
+    /* Animasi ketika navbar muncul / hilang */
+    transition: transform .35s ease;
+}
+
+header.hide{
+    /* Geser navbar keluar layar ke atas */
+    transform: translate(-50%, -140%);
+}
 
 nav {
-    display: flex; /* membuat isi nav sejajar */
-    justify-content: space-between;
-    align-items: center; 
-    padding: 15px 80px; /* atas bawah | kiri kanan */
-    background-color: var(--dark);
-    border-bottom: 1px solid var(--gray); /* garis bawah */
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0;
+
+    background:none;
+    border:none;
 }
 
 nav ul {
     display: flex; /* list menjadi sejajar */
     list-style: none; /* menghilangkan titik bullet */
-    gap: 30px;
+    gap: 38px;
+}
+
+nav a {
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 500;
 }
 
 nav h1{
@@ -50,30 +85,66 @@ nav h1{
 }
 
 nav img{
-    width: 125px; /* lebar logo */
+    width: 100px; /* lebar logo */
 }
 
 nav ul li a {
-    text-decoration: none; /* menghilangkan garis bawah */
+    text-decoration: none;
     color: var(--white);
     font-weight: 500;
-    transition: 0.3s; /* animasi halus */
+    position: relative;
+    transition: .3s;
 }
 
-nav ul li a:hover {
-    color: var(--primary); /* berubah warna saat disentuh mouse */
+nav ul li a::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--primary);
+
+    transform: translateX(-50%);
+    transition: width .3s ease;
+}
+
+/* Warna tulisan */
+nav ul li a:hover{
+    color: var(--primary);
+}
+
+/* Garis bawah */
+nav ul li a:hover::after{
+    width: 100%;
 }
 
 /* Hero style */
+
+#home {
+    margin-bottom: 100px;
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(37,99,235,.35) 0%,
+            rgba(37,99,235,.12) 35%,
+            transparent 68%
+        ),
+        #0f172a;
+}
 
 .hero .container{
     width: 90%; /* lebar konten */
     max-width: 1200px; /* batas maksimal lebar */
     margin: 0 auto; /* membuat container berada di tengah */
+    margin-top: 180px;
+    margin-bottom: 100px;
 }
 
 .hero {
-  padding: 120px 20px; /* jarak isi section */
+  padding: 90px 20px 120px; /* jarak isi section */
   text-align: center; /* posisi teks di tengah */
 }
 
@@ -81,29 +152,104 @@ nav ul li a:hover {
     font-size: 50px;
     margin-bottom: 20px;
     line-height: 1.2;
+    animation: fadeUp 0.8s ease; /* Menjalankan animasi bernama fadeUp selama 1 detik. */
 }
 
 .hero p {
     color: var(--gray);
     max-width: 650px; /* lebar maksimal */
+    font-weight: 250;
     margin: 0 auto 30px; /* tengah + jarak bawah */
+    animation: fadeUp 1s ease;
 }
 
-.hero .btn {
-    font-size: 20px;
-    font-weight: bold;
-    padding: 20px 50px;
-    border: none;
-    background-color: var(--primary);
-    color: var(--white);
-    border-radius: 50px;
+/* Ini adalah cetakan animasi. */
+@keyframes fadeUp{
+    from{
+        /* Awalnya tidak terlihat (opacity:0) dan posisinya 30px lebih ke bawah. */
+        opacity:0;
+        transform:translateY(30px);
+    }
+
+    to{
+        /* Akhirnya terlihat penuh (opacity:1) dan kembali ke posisi normal */
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-.hero .btn:hover {
-    background-color: #1d4ed8;
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:40px;
 }
+
+.btn-primary,
+.btn-secondary{
+    text-decoration:none;
+    padding:16px 36px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#2962ff;
+    color:white;
+}
+
+.btn-primary:hover{
+    transform:translateY(-5px);
+}
+
+.btn-secondary{
+    border:1px solid #2962ff;
+    color:white;
+}
+
+.btn-secondary:hover{
+    background:#2962ff;
+    transform:translateY(-5px);
+}
+
+.hero .btn{
+    box-shadow:0 10px 30px rgba(37,99,235,.35);
+}
+
+.hero-stats{
+    display:flex;
+    justify-content:center;
+    gap:70px;
+    margin-top:70px;
+    transition:.3s;
+}
+
+.hero-stats:hover{
+    transform:translateY(-5px);
+}
+
+.stat-item{
+    text-align:center;
+}
+
+.stat-item h3{
+    color:white;
+    font-size:32px;
+    margin-bottom:8px;
+    animation: fadeUp 1s ease;
+}
+
+.stat-item p{
+    color:#8b8fa3;
+}
+
 
 /* About Style */
+
+#about {
+    scroll-margin-top: 120px;
+}
 
 .about {
     display: flex;
@@ -173,6 +319,110 @@ nav ul li a:hover {
 
 /* Services Style */
 
+#services {
+    padding: 70px 0;
+}
+
+.services-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.services-header h2 {
+    font-size: 42px;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.services-header p {
+    max-width: 1100px;
+    font-size: 18px;
+    margin: 0 auto;
+    color: #b8c0d4;
+    line-height: 1.8;
+}
+
+.services-grid {
+    /* Mengubah elemen menjadi Grid Container, sehingga child di dalamnya bisa diatur dalam baris (row) dan kolom (column) */
+    display: grid;
+    /* Membuat 2 kolom yang lebarnya sama. */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 100px;
+}
+
+.services-card {
+    border:1px solid rgba(255,255,255,.05);
+    background: #111827;
+    padding: 40px;
+    border-radius: 20px;
+    transition: .3s;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+}
+
+.services-card:hover{
+    /* Geser elemen ke atas 8 pixel */
+    transform:translateY(-8px);
+    border-color: rgba(37, 99, 235, .7);
+    box-shadow: 0 20px 50px rgba(37,99,235,.12);
+}
+
+.services-icon {
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(37,99,235,.15);
+
+    border-radius: 50%;
+
+    margin-bottom: 25px;
+}
+
+.services-card:hover .services-icon{
+    transform:scale(1.08);
+}
+
+.services-icon img {
+    width: 36px;
+}
+
+.services-card h3 {
+    color: var(--white);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.services-card p {
+    color: var(--gray);
+    line-height: 1.8;
+    padding-bottom: 24px;
+}
+
+.services-link {
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    color: var(--primary);
+    text-decoration:none;
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.services-link:hover {
+    color: white;
+    gap:14px;
+}
+
+.services-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,.3);
+}
 
 
 /* Contact Style */
