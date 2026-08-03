@@ -17,6 +17,7 @@
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#testimonial">Testimonial</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -59,7 +60,7 @@
 
       <!-- Section 2: Tentang Kami -->
       <section id="about">
-        <div class="about-container about">
+        <div class="container about-container about">
             <div class="about-text">
                 <h2>About Us</h2>
                 <p>
@@ -137,39 +138,221 @@
             </div>
         </div>
       </section>
-      <!-- Section 3: section kontak -->
-       <section id="Contact">
+
+
+      <!-- Section 4: Testimonial -->
+      <section id="testimonial">
+
         <div class="container">
-            <h2>Let's Work Together</h2>
-            <p>
-                Have a project in mind? We'd love to hear about it.
-                Send us a message and we'll get back to you soon.
-            </p>
 
-            <!-- Formulir kontak sederhana -->
-            <form>
-                <div>
-                    <label for="nama">Nama:</label><br>
-                    <input type="text" id="nama" name="nama" placeholder="Masukan nama lengkap">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+
+                <p>
+                    Hear what our clients have to say about their experience
+                    working with Nexora Studio.
+                </p>
+            </div>
+
+            <div class="testimonial-grid">
+
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+
+                    <p class="testimonial-text">
+                        "Working with Nexora Studio was an amazing experience.
+                        They delivered our website on time with outstanding quality."
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <img src="https://i.pravatar.cc/80?img=11" alt="Client">
+
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <span>CEO, BrightTech</span>
+                        </div>
+
+                    </div>
+
                 </div>
-                <div>
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email" placeholder="Masukan email">
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+
+                    <p class="testimonial-text">
+                        "Professional team, clean design, and excellent support.
+                        Highly recommended for any business."
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <img src="https://i.pravatar.cc/80?img=32" alt="Client">
+
+                        <div>
+                            <h4>Michael Brown</h4>
+                            <span>Founder, Vision Studio</span>
+                        </div>
+
+                    </div>
+
                 </div>
-                <div>
-                    <label for="pesan">Pesan:</label><br>
-                    <textarea id="pesan" placeholder="Tulis pesan anda disini"></textarea>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+
+                    <p class="testimonial-text">
+                        "The final website exceeded our expectations.
+                        It looks modern, fast, and works perfectly on every device."
+                    </p>
+
+                    <div class="testimonial-author">
+
+                        <img src="https://i.pravatar.cc/80?img=51" alt="Client">
+
+                        <div>
+                            <h4>Emily Davis</h4>
+                            <span>Marketing Manager</span>
+                        </div>
+                    </div>
                 </div>
-                <button type="submit">Kirim</button>
-            </form>
+            </div>
         </div>
-       </section>
+    </section>
 
+      <!-- Section 5: section kontak -->
+    
+    <section id="contact">
+
+        <div class="container">
+
+            <!-- Membuat 2 kolom -->
+            <div class="contact-wrapper">
+
+            
+                <!-- Kolom Kiri -->
+                <div class="contact-form">
+
+                    <h2>Let's Work Together</h2>
+
+                    <p>
+                    Have a project in mind? We'd love to hear about it.
+                    Send us a message and we'll get back to you soon.
+                    </p>
+
+                    <form>
+                        <div class="form-group">
+                            <label for="nama">Nama</label>
+                            <input
+                            type="text"
+                            id="nama"
+                            placeholder="Masukkan nama lengkap"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input
+                            type="email"
+                            id="email"
+                            placeholder="Masukkan email"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pesan">Pesan</label>
+                            <textarea
+                            id="pesan"
+                            placeholder="Tulis pesan anda disini"
+                            ></textarea>
+                        </div>
+
+                        <button type="submit">
+                            Kirim Pesan
+                        </button>
+                    </form>
+                </div>
+
+            
+                <!-- Kolom Kanan -->
+                
+                <div class="contact-info">
+
+                    <img src="assets/logo.png" alt="Nexora Logo">
+
+                    <h3>Nexora Studio</h3>
+
+                    <p>
+                    We build modern websites that help businesses
+                    grow faster in the digital world.
+                    </p>
+
+                    <div class="info-item">
+                    📧 hello@nexora.com
+                    </div>
+
+                    <div class="info-item">
+                    📞 +62 812-3456-7890
+                    </div>
+
+                    <div class="info-item">
+                    📍 Indonesia
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     </main>
-    <!-- 5. footer bagian paling bawah halaman biasanya berisi hak cipta -->
-     <footer>
-        <p><p>© 2026 Nexora Studio. All Rights Reserved.</p></p>
-     </footer>
+    <!-- Section 6: footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <!-- Logo -->
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="Nexora Logo">
+
+                    <p>
+                        Build modern websites that help businesses
+                        grow in the digital era.
+                    </p>
+                </div>
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+
+                        <li><a href="#about">About</a></li>
+
+                        <li><a href="#services">Services</a></li>
+
+                        <li><a href="#testimonial">Testimonials</a></li>
+
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Social -->
+                <div class="footer-social">
+
+                    <h3>Follow Us</h3>
+
+                    <a href="#">GitHub</a>
+
+                    <a href="#">LinkedIn</a>
+
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+
+            <!-- Garis -->
+            <div class="footer-bottom">
+                <p>
+                    © 2026 Nexora Studio. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
      <script src="js/script.js"></script>
   </body>
 </html>
